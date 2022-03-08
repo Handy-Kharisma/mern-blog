@@ -1,0 +1,22 @@
+.main-app-wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    .header-wrapper{
+
+    }
+
+    .content-wrapper{
+        max-width: 1500px;
+        margin: auto;
+        width: 100%;
+        flex: 1;
+
+    }
+
+    .footer-wrapper{
+
+    }
+}
+
