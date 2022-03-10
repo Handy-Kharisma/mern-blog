@@ -3,6 +3,7 @@ import LoginBg from './image/toa-heftiba-ip9R11FMbV8-unsplash.jpg';
 import LogoHK from './image/Handy_Large_NoBG.png';
 import BlogImage from './image/thought-catalog-505eectW54k-unsplash.jpg';
 import CreateImage from './image/john-mark-smith-P6uqpNyXcI4-unsplash.jpg';
+import DetailImage from './image/ben-kolde-FaPxZ88yZrw-unsplash.jpg';
 // icon
 import ICFacebook from './icon/Facebook.svg';
 import ICTwitter from './icon/Twitter.svg';
@@ -11,4 +12,4 @@ import ICTelegram from './icon/Telegram.svg';
 import ICDiscord from './icon/Discord.svg';
 import ICGitHub from './icon/GitHub.svg';
 
-export { RegisterBg, LoginBg, LogoHK, BlogImage, CreateImage, ICFacebook, ICTwitter, ICInstagram, ICTelegram, ICDiscord, ICGitHub };
+export { RegisterBg, LoginBg, LogoHK, BlogImage, CreateImage, DetailImage, ICFacebook, ICTwitter, ICInstagram, ICTelegram, ICDiscord, ICGitHub };
