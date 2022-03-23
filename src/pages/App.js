@@ -1,9 +1,12 @@
 import './App.css';
-import { Routing } from '../config';
+import { Routing, store } from '../config';
+import { Provider } from 'react-redux';
 
 function App() {
   return (
-    <Routing />
+    <Provider store={store}>
+      <Routing />
+    </Provider>
   );
 }
 
