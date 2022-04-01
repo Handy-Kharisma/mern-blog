@@ -6,9 +6,17 @@ const Routing = () => {
   return (
     <Router>
         <Routes>
-            <Route path="/login" element={<Login/>} />
-            <Route path="/register" element={<Register/>} />
-            <Route path="/*" element={<MainApp/>} />
+            <Route
+            path="/login"
+            element={<Login/>} />
+
+            <Route
+            path="/register"
+            element={<Register/>} />
+            
+            <Route
+            path="/*"
+            element={<MainApp/>} />
         </Routes>
     </Router>
   )

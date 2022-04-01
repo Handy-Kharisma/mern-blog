@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { DetailImage } from '../../assets';
 import { Link, Gap } from '../../components';
 import './detailblog.scss';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, withRouter } from 'react-router-dom'
 
-const DetailBlog = () => {
+const DetailBlog = (props) => {
+  useEffect(() => {
+    console.log('params: ', props)
+  }, [props])
   const navigate = useNavigate();
   return (
     <div className='detail-blog-wrapper'>
@@ -18,4 +21,4 @@ const DetailBlog = () => {
   )
 }
 
-export default DetailBlog
+export default withRouter(DetailBlog)

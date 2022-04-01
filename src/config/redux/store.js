@@ -1,14 +1,7 @@
-const { createStore } = require("redux");
+import { applyMiddleware, createStore } from 'redux';
+import reducer from "./reducer/reducer";
+import thunk from 'redux-thunk';
 
-const initialState = {
-    dataBlog: [],
-    name: 'Handy Kharisma'
-}
-
-const reducer = (function(state = initialState, action){
-    return state;
-})
-
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(thunk));
 
 export default store;
