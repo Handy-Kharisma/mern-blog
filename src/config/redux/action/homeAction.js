@@ -5,8 +5,8 @@ export const setDataBlog = (page) => (function(dispatch){
     .then(result => {
         // console.log('Data API', result.data);
         const responseAPI = result.data;
-
-        console.log('data API', responseAPI)
+        
+        // console.log('data API', responseAPI)
 
 
         // setDataBlog(responseAPI.data)

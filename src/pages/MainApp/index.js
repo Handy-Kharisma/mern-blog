@@ -14,15 +14,18 @@ const MainApp = () => {
       </div>
       <div className='content-wrapper'>
         <Routes>
-            <Route
-            path="create-blog"
-            element={<CreateBlog />} />
+            <Route path="create-blog/">
+              <Route path="" element={<CreateBlog />} />
+              <Route path=":id" element={<CreateBlog />} />
+            </Route>
 
             <Route
             path="detail-blog/:id"
             element={<DetailBlog />} />
-
-            <Route path="" element={<Home />} />
+            
+            <Route
+            path=""
+            element={<Home />} />
         </Routes>
       </div>
       <div className='footer-wrapper'>

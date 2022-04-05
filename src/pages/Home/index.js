@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import { Button, BlogItem, Gap } from '../../components'
 import { setDataBlog } from '../../config/redux/action'
 import './home.scss'
+import { confirmAlert } from 'react-confirm-alert'
+import 'react-confirm-alert/src/react-confirm-alert.css'
 
 
 
@@ -16,7 +18,7 @@ const Home = () => {
   const {dataBlog, page} = useSelector(state => state.homeReducer);
   const dispatch = useDispatch();
 
-  console.log('page: ', page);
+  // console.log('page: ', page);
   // console.log('data blog global: ', dataBlogs);
   //console.log('data blog global: ', dataBlogs)
   useEffect(() => {
@@ -30,13 +32,41 @@ const Home = () => {
 
   const previous = (function(){
     setCounter(counter <= 1 ? 1 : counter - 1);
-    console.log(counter);
+    // console.log(counter);
   })
 
   const next = (function(){
     setCounter(counter === page.totalPage ? page.totalPage : counter + 1);
-    console.log(counter);
+    // console.log(counter);
   })
+
+  const confirmDelete = (id) => {
+    confirmAlert({
+      title: 'Confirm to Delete',
+      message: 'Apakah Anda yakin akan menghapus post ini?',
+      buttons: [
+        {
+          label: 'Ya',
+          onClick: () => {
+            Axios.delete(`http://localhost:4000/v1/blog/post/${id}`)
+            .then(res => {
+              console.log('success delete: ', res.data);
+              dispatch(setDataBlog(counter))
+              // setData(res.data.data)
+            })
+            .catch(err => {
+              console.log('err: ', err);
+            })
+          }
+        },
+        {
+          label: 'Tidak',
+          onClick: () => console.log('user tidak setuju')
+        }
+      ]
+    });
+  }
+
 
 
   return (
@@ -55,7 +85,9 @@ const Home = () => {
               body={blog.body}
               name={blog.author.name}
               date={blog.createdAt}
-              _id={blog._id} />
+              _id={blog._id}
+              onDelete={confirmDelete}
+            />
           )
         })}
       </div>
